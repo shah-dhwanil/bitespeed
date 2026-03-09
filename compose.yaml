@@ -1,0 +1,12 @@
+services:
+  flyway:
+    image: flyway/flyway:9-alpine
+    command: -baselineOnMigrate=true -locations=filesystem:/flyway/sql migrate
+    volumes:
+      - ./migrations:/flyway/sql
+    environment:
+      FLYWAY_URL: ${FLYWAY_URL}
+      FLYWAY_USER: ${FLYWAY_USER}
+      FLYWAY_PASSWORD: ${FLYWAY_PASSWORD}
+      FLYWAY_SCHEMAS: "bitespeed"
+      FLYWAY_VALIDATE_MIGRATION_NAMING: true

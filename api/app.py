@@ -8,6 +8,7 @@ middleware, and lifespan management for database and logging setup.
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
+from api.controller.contact import router as contacts_router
 from api.exceptions.handler import register_exception_handlers
 from api.lifespan import lifespan
 from api.middleware import ContextMiddleware, LoggingMiddleware, RequestIDMiddleware
@@ -53,6 +54,8 @@ def create_app() -> FastAPI:
     app.add_middleware(ContextMiddleware)
     app.add_middleware(RequestIDMiddleware)
 
+    # Include routers
+    app.include_router(contacts_router)
 
     return app
 
