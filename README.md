@@ -3,7 +3,7 @@
 A FastAPI + PostgreSQL microservice that consolidates customer identities across multiple contact records. Given any combination of email address and phone number, the `/identify` endpoint finds all linked contacts, merges separate clusters when necessary, and returns a single unified view of that customer's identity.
 
 **Deployed service:** https://bitespeed-production-160c.up.railway.app/
-**Interactive API docs:** https://bitespeed-production-160c.up.railway.app//scalar
+**Interactive API docs:** https://bitespeed-production-160c.up.railway.app/scalar
 
 ---
 
